@@ -95,12 +95,12 @@ const projects = [
             {
                 name: "firbase"
             },
-           
+
         ],
         image: project_4,
         github: "https://github.com/Ausetech/TaskApp-Mobile"
     },
- 
+
 ];
 
 const Work = () => {
@@ -131,17 +131,19 @@ const Work = () => {
                             <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>{project.category}</h2>
                             <p className='text-white/60'>{project.decription}</p>
 
-                            <ul className='flex gap-4'>
+                            <ul className='flex xl:gap-2'>
                                 {
                                     project.stack.map((item, index) => {
                                         return (
-                                            <li key={index} className='text-xl text-accent'>{item.name}
+                                            <li key={index} className=' xl:text-xl text-accent'>{item.name}
                                                 {index !== project.stack.length - 1 && ","}
                                             </li>
                                         )
                                     })
                                 }
                             </ul>
+
+
                             <div className='border border-white/20'></div>
                             <div className='items-center p-2'>
 
