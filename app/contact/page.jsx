@@ -143,6 +143,7 @@ const Contact = () => {
                                 <div>
 
                                     <Input
+
                                         type="text"
                                         placeholder="First name"
                                         name="firstname"
@@ -150,7 +151,7 @@ const Contact = () => {
                                         onChange={handleInputChange}
                                         id="firstname"
                                         aria-label="First name"
-                                        className={errors.firstname ? 'border-red-500' : ''}
+                                        className={errors.firstname ? 'border-red-500 w-full' : 'w-full'}
                                     />
                                     {errors.firstname && <p className="text-xs text-red-500">{errors.firstname}</p>}
                                 </div>
@@ -164,7 +165,8 @@ const Contact = () => {
                                         onChange={handleInputChange}
                                         id="lastname"
                                         aria-label="Last name"
-                                        className={errors.lastname ? 'border-red-500' : ''}
+
+                                        className={errors.lastname ? 'border-red-500 w-full' : 'w-full'}
                                     />
                                     {errors.lastname && <p className="text-xs text-red-500">{errors.lastname}</p>}
                                 </div>
@@ -178,7 +180,7 @@ const Contact = () => {
                                         onChange={handleInputChange}
                                         id="email"
                                         aria-label="Email address"
-                                        className={errors.email ? 'border-red-500' : ''}
+                                        className={errors.email ? 'border-red-500 w-full' : 'w-full'}
                                     />
                                     {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
                                 </div>
@@ -192,7 +194,7 @@ const Contact = () => {
                                         onChange={handleInputChange}
                                         id="mobile"
                                         aria-label="Phone number"
-                                        className={errors.mobile ? 'border-red-500' : ''}
+                                        className={errors.mobile ? 'border-red-500 w-full' : 'w-full'}
                                     />
                                     {errors.mobile && <p className="text-xs text-red-500">{errors.mobile}</p>}
                                 </div>
