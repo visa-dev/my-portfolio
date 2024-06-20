@@ -17,7 +17,7 @@ import Link from 'next/link';
 const about =
 {
   title: "About me",
-  description: "Hi Visa dev",
+  description: "I am quick learner with solid tech experience",
   info: [
     {
       fieldName: "Name",
@@ -56,7 +56,7 @@ const experience =
 {
   icon: '/assets/resum/badge.svg',
   title: 'My experience',
-  description: "I am fullstack devloper mobile ",
+  description: "I am quick learner with solid tech experience",
   items: [
     {
       company: "Aus-eTec Pvt Ltd",
@@ -71,7 +71,7 @@ const education =
 {
   icon: '/assets/resum/cap.svg',
   title: 'My education',
-  description: "Temp text",
+  description: "",
   items: [
     {
       institution: "University Of Jaffna",
@@ -153,27 +153,27 @@ const education =
 const skills =
 {
   title: 'My skills',
-  description: "Temp text",
+  description: "I have good experience and knowledge of following  technologies",
   skillList: [
     {
       icon: <FaJs />,
       digree: "javascript",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
 
     {
       icon: <SiExpress />,
       digree: "express.js",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
 
     {
       icon: <FaReact />,
       digree: "react.js",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <SiNextdotjs />,
@@ -185,68 +185,68 @@ const skills =
       icon: <FaNodeJs />,
       digree: "node.js",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <FaJava />,
       digree: "java",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <SiC />,
       digree: "C",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <SiCplusplus />,
       digree: "C++",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <SiCsharp />,
       digree: "c#",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
 
     {
       icon: <SiTailwindcss />,
       digree: "tailwind.css",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <SiSpringboot />,
       digree: "springBoot",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <SiMongodb />,
       digree: "mongodb",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <SiMysql />,
       digree: "mysql",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <FaHtml5 />,
       digree: "html",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <FaCss3 />,
       digree: "css 3",
       star: ["*", "*", "*", "*", "*"],
-      level: 3
+      level: 4
     },
     {
       icon: <FaFigma />,
