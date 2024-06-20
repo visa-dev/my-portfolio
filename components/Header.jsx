@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Nav from "./Nav";
 import { Button } from "./ui/button";
@@ -5,8 +7,8 @@ import MobileNav from "./MobileNav";
 
 const Header = () => {
     return (
-        <header className="py-8 xl:py-12 text-white">
-            <div className="container mx-auto flex justify-between items-center">
+        <header className="py-8 text-white xl:py-12">
+            <div className="container flex items-center justify-between mx-auto">
 
                 {/* logo */}
                 <Link href="/">
@@ -16,9 +18,9 @@ const Header = () => {
                 </Link>
 
                 {/* desktop navigation and hire me button */}
-                <div className="hidden xl:flex items-center gap-8 ">
+                <div className="items-center hidden gap-8 xl:flex ">
                     <Nav />
-                    <Button>Hire me</Button>
+                    <Button onClick={ ()=>window.open("/contact", '_blank')}>Hire me</Button>
                 </div>
 
                 {/* mobile navigation and hire me button */}

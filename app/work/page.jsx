@@ -13,13 +13,16 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import Link from 'next/link';
 import { Item } from '@radix-ui/react-select';
 import project_1 from '../../assets/work/project_1.png';
+import project_2 from '../../assets/work/project_2.png';
+import project_3 from '../../assets/work/project_3.png';
+import project_4 from '../../assets/work/project_4.png';
 import SliderButton from '@/components/SliderButton';
 
 const projects = [
     {
         num: "01",
         category: "Mern Stack",
-        title: "Project 1",
+        title: "University Final Project 1",
         decription: "Sport Managment System",
         stack: [
             {
@@ -36,36 +39,33 @@ const projects = [
             }
         ],
         image: project_1,
-        github: "www"
+        github: "https://github.com/visa-dev/Sport-System"
     },
     {
         num: "02",
-        category: "Mern Stack",
-        title: "Project 1",
-        decription: "Sport Managment System",
+        category: "React+Springboot",
+        title: "University E-Commerce Subject Project ",
+        decription: "Food Managment System",
         stack: [
             {
                 name: "react"
             },
             {
-                name: "express.js"
+                name: "springbbot"
             },
             {
-                name: "node.js"
-            },
-            {
-                name: "mongodb"
+                name: "mysql"
             }
         ],
-        image: project_1,
-        github: ""
+        image: project_2,
+        github: "https://github.com/SGopinath89/IT32322024FoodDelivery"
     }
     ,
     {
         num: "03",
         category: "Mern Stack",
-        title: "Project 1",
-        decription: "Sport Managment System",
+        title: "University Final Project 2",
+        decription: "Blood Managment System",
         stack: [
             {
                 name: "react"
@@ -80,53 +80,27 @@ const projects = [
                 name: "mongodb"
             }
         ],
-        image: project_1,
-        github: ""
+        image: project_3,
+        github: "https://github.com/visa-dev/Blood_Banking_System"
     },
     {
         num: "04",
-        category: "Mern Stack",
-        title: "Project 1",
-        decription: "Sport Managment System",
+        category: "Flutter Mobile App",
+        title: "Intern First Task",
+        decription: "Task Chase App",
         stack: [
             {
-                name: "react"
+                name: "flutter"
             },
             {
-                name: "express.js"
+                name: "firbase"
             },
-            {
-                name: "node.js"
-            },
-            {
-                name: "mongodb"
-            }
+           
         ],
-        image: project_1,
-        github: ""
+        image: project_4,
+        github: "https://github.com/Ausetech/TaskApp-Mobile"
     },
-    {
-        num: "05",
-        category: "Mern Stack",
-        title: "Project 1",
-        decription: "Sport Managment System",
-        stack: [
-            {
-                name: "react"
-            },
-            {
-                name: "express.js"
-            },
-            {
-                name: "node.js"
-            },
-            {
-                name: "mongodb"
-            }
-        ],
-        image: project_1,
-        github: ""
-    }
+ 
 ];
 
 const Work = () => {
