@@ -6,11 +6,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import { BsArrowRight, BsGithub } from 'react-icons/bs';
 import Image from 'next/image';
+import { CiLink } from "react-icons/ci";
 
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import Link from 'next/link';
-
+import { Item } from '@radix-ui/react-select';
+import project_1 from '../../assets/work/project_1.png';
+import SliderButton from '@/components/SliderButton';
 
 const projects = [
     {
@@ -32,11 +35,11 @@ const projects = [
                 name: "mongodb"
             }
         ],
-        image: "",
-        github: ""
+        image: project_1,
+        github: "www"
     },
     {
-        num: "01",
+        num: "02",
         category: "Mern Stack",
         title: "Project 1",
         decription: "Sport Managment System",
@@ -54,12 +57,12 @@ const projects = [
                 name: "mongodb"
             }
         ],
-        image: "",
+        image: project_1,
         github: ""
     }
     ,
     {
-        num: "01",
+        num: "03",
         category: "Mern Stack",
         title: "Project 1",
         decription: "Sport Managment System",
@@ -77,11 +80,11 @@ const projects = [
                 name: "mongodb"
             }
         ],
-        image: "",
+        image: project_1,
         github: ""
     },
     {
-        num: "01",
+        num: "04",
         category: "Mern Stack",
         title: "Project 1",
         decription: "Sport Managment System",
@@ -99,11 +102,11 @@ const projects = [
                 name: "mongodb"
             }
         ],
-        image: "",
+        image: project_1,
         github: ""
     },
     {
-        num: "01",
+        num: "05",
         category: "Mern Stack",
         title: "Project 1",
         decription: "Sport Managment System",
@@ -121,7 +124,7 @@ const projects = [
                 name: "mongodb"
             }
         ],
-        image: "",
+        image: project_1,
         github: ""
     }
 ];
@@ -129,9 +132,19 @@ const projects = [
 const Work = () => {
 
     const [project, setProject] = useState(projects[0]);
+
+    const handleSlideChnage = (swiper) => {
+        const currentIndex = swiper.activeIndex;
+        setProject(projects[currentIndex]);
+    }
+
     return (
         <motion.section
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='min-h-[80vh] flex flex-col justify-center py-12 xl:px-0'>
+            initial={{ opacity: 0 }} animate={{
+                opacity: 1, transition: {
+                    duration: 0.4, delay: 2.4, ease: "easeIn"
+                }
+            }} className='min-h-[80vh] flex flex-col justify-center py-12 xl:px-0'>
 
             <div className='container mx-auto'>
                 <div className='flex flex-col xl:flex-row xl:gap-[30px]'>
@@ -156,34 +169,55 @@ const Work = () => {
                                 }
                             </ul>
                             <div className='border border-white/20'></div>
-                            <div>
-                                <Link href={project.github} >
-                                    <TooltipProvider>
-                                        <Tooltip>
-                                            <TooltipTrigger>
-                                                <BsGithub />
-                                            </TooltipTrigger>
-                                            <TooltipContent>
-                                                <p>Git hub</p>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
-                                </Link>
+                            <div className='items-center p-2'>
+
+                                <TooltipProvider delayDuration={10}>
+                                    <Tooltip>
+                                        <TooltipTrigger  >
+                                            <BsGithub className='text-4xl text-white' />
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            <Link href={project.github}><p>Link to Repo<CiLink /></p></Link>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+
                             </div>
                         </div>
                     </div>
-                    <div className='w-full xl:w-[50%] h-[460px]'>
-                        <Swiper>
+                    <div className='w-full xl:w-[50%]'>
+                        <Swiper
+                            spaceBetween={30}
+                            slidesPerView={1}
+                            className='xl:h-[460px] mb-12'
+                            onSlideChange={handleSlideChnage}
+                        >
                             {
                                 projects.map((project, index) => {
-                                    return <SwiperSlide key={index}>
-
+                                    return <SwiperSlide key={index} className='w-full'>
+                                        <div className='h-[400px] relative group flex justify-center items-center bg-pink-50/20'>
+                                            <div className='relative w-full h-full'>
+                                                <Image
+                                                    src={project.image}
+                                                    fill
+                                                    className='object-cover'
+                                                />
+                                            </div>
+                                        </div>
                                     </SwiperSlide>
                                 })
                             }
+
+                            <SliderButton
+                                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                                btnStyles="bg-accent hover:bg-accent-hovee text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                                iconStyles="" />
                         </Swiper>
+
+
                     </div>
                 </div>
+
             </div>
 
         </motion.section>
