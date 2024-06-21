@@ -82,7 +82,7 @@ const education =
       duration: "2021-Present"
     },
     {
-      institution: "St' Mary's Collage Kegalle",
+      institution: "St' Mary's College Kegalle",
       digree: "Advanced Level",
       result: [
         {
@@ -102,11 +102,11 @@ const education =
       duration: "2018-2019"
     },
     {
-      institution: "St' Mary's Collage Kegalle",
+      institution: "St' Mary's College Kegalle",
       digree: "Ordinary Level",
       result: [
         {
-          subject: "Mathamtics",
+          subject: "Mathematics",
           pass: "A"
         },
         {
