@@ -43,10 +43,7 @@ const about =
       fieldName: "Languages",
       fieldValue: "English | Sinhala"
     },
-    {
-      fieldName: "Nationality",
-      fieldValue: "Sri lankan"
-    },
+  
 
 
   ]
