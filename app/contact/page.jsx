@@ -47,6 +47,7 @@ const Contact = () => {
     });
 
     const [errors, setErrors] = useState({});
+    const [isSending, setIsSending] = useState(false);
 
     const form = useRef();
 
@@ -60,6 +61,8 @@ const Contact = () => {
         setFormdata({ ...formdata, service: value });
         setErrors({ ...errors, service: "" });
     };
+
+
 
     const validate = () => {
         const newErrors = {};
@@ -83,7 +86,7 @@ const Contact = () => {
         return newErrors;
     };
 
-    const handleSendEmail = (e) => {
+    const handleSendEmail = async (e) => {
         e.preventDefault();
 
         const validationErrors = validate();
@@ -91,37 +94,41 @@ const Contact = () => {
             setErrors(validationErrors);
             return;
         }
+        if (isSending) {
+            return;
+        }
+        setIsSending(true);
+        try {
+            await emailjs.sendForm('service_2gewkfu', 'template_hkoo9kl', form.current, '-qmLfDIMGEDTTEri0');
 
-        emailjs
-            .sendForm('service_2gewkfu', 'template_hkoo9kl', form.current, '-qmLfDIMGEDTTEri0')
-            .then(
-                () => {
-                    Swal.fire({
-                        title: "Thank you!",
-                        text: "Email Sent Successfully",
-                        icon: "success",
-                    });
-                    console.log('SUCCESS!');
-                    e.target.reset();
-                    setFormdata({
-                        firstname: "",
-                        lastname: "",
-                        email: "",
-                        service: "",
-                        mobile: "",
-                        message: ""
-                    });
-                    setErrors({});
-                },
-                (error) => {
-                    Swal.fire({
-                        title: "Error!",
-                        text: "Failed to send email. Please try again.",
-                        icon: "error"
-                    });
-                    console.log('FAILED...', error.text);
-                },
-            );
+            // Email sent successfully
+            Swal.fire({
+                title: "Thank you!",
+                text: "Email Sent Successfully",
+                icon: "success",
+            });
+            console.log('SUCCESS!');
+            e.target.reset(); // Reset form
+            setFormdata({
+                firstname: "",
+                lastname: "",
+                email: "",
+                service: "",
+                mobile: "",
+                message: ""
+            });
+            setErrors({}); // Clear any form validation errors
+        } catch (error) {
+            // Error handling
+            Swal.fire({
+                title: "Error!",
+                text: "Failed to send email. Please try again.",
+                icon: "error"
+            });
+            console.error('FAILED...', error);
+        } finally {
+            setIsSending(false); // Reset sending status
+        }
     };
 
     return (
@@ -231,7 +238,8 @@ const Contact = () => {
 
                             </div>
 
-                            <Button type="submit" size="md" className="max-w-40">Send message</Button>
+                            <Button type="submit" size="md" className="max-w-40" disabled={isSending}>
+                                {isSending ? 'Sending...' : 'Send Email'}</Button>
                         </form>
                     </div>
                     <div className="flex items-center flex-1 order-1 mb-8 xl:justify-end xl:order-none xl:mb-0">
